@@ -16,6 +16,8 @@ struct Registro: View {
     @State private var usuario: String = ""
     @State private var contra: String = ""
     @State private var confcontra: String = ""
+    
+    @State var isShowingUsuario = false
 
     var body: some View {
         NavigationView {
@@ -49,27 +51,36 @@ struct Registro: View {
                         .disableAutocorrection(true)
                         .padding(8)
                         .font(.headline)
+                        .frame(width: 350, height: 100) // Establece el ancho y alto deseados
                         .background(Color.gray.opacity(0.3)) // Establece el color de fondo directamente
                         .cornerRadius(6)
                         .overlay(
-                            Text("Ingrese su dirección...") // Agrega un placeholder
-                                .padding(10)
-                        )
+                                Text("Ingrese su dirección...")
+                                    .padding(.leading, 8) // Alinea el placeholder a la izquierda
+                                    .foregroundColor(Color.secondary) // Cambia el color del placeholder si lo deseas
+                                    .opacity(dirrecion.isEmpty ? 1 : 0) // Muestra el placeholder si el texto está vacío
+                            )
+                        
                     Text("Correo:")
                         .font(.headline)
                         .padding(.top, 10)
                     TextField("Ejemplo@gmail.com...", text: $correo)
                         .keyboardType(.emailAddress)
                         .disableAutocorrection(true)
-                        .padding(8)
+                        .padding(10)
                         .font(.headline)
                         .background(Color.gray.opacity(0.3))
                         .cornerRadius(6)
+                        .padding(10)
                     
                     
                     
-                  
-                    Button("Guardar") {
+                   // NavigationLink(destination: Usuario(), isActive: $isShowingUsuario) {
+                   //     EmptyView()
+                   // }
+                    Button("Continuar") {
+                        //isShowingUsuario = true
+                        isShowingUsuario.toggle()
                         // Aquí puedes guardar la información ingresada por el usuario.
                         print("Usuario: \(nombre)")
                         print("Apellido: \(apellido)")
@@ -88,15 +99,15 @@ struct Registro: View {
                     .foregroundColor(.white)
                     .font(.headline)
                     .padding(10)
+                    .fullScreenCover(isPresented: $isShowingUsuario) {
+                        Usuario()
+                    }
+
                 }
                 .padding()
             }
             .navigationBarTitle("Datos Personales")
-            .navigationBarItems(leading:
-                            NavigationLink(destination: ContentView()) {
-                                Text("Atrás")
-                                    .font(.headline)
-                })
+           
         }
 
     }

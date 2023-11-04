@@ -70,7 +70,7 @@ struct ActualizarcF: View {
             }
             .navigationBarTitle("Actualizar Clave")
             .navigationBarItems(leading:
-                            NavigationLink(destination: ContentView()) {
+                            NavigationLink(destination: Login()) {
                                 Text("Atrás")
                                     .font(.headline)
                 })
