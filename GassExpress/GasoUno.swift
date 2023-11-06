@@ -16,7 +16,7 @@ struct Gasolinera {
 
 struct GasoUno: View {
     let estaciones: [Gasolinera] = [
-        Gasolinera(name: "UN.Los Héroes", address: "Boulevard Los Heroes y Calle Los Sismiles ", imageName: "gasuno"),
+        Gasolinera(name: "UNO.Los Héroes", address: "Boulevard Los Heroes y Calle Los Sismiles ", imageName: "gasuno"),
         Gasolinera(name: "UNO.San Benito", address: "Alameda Manuel Enrique Araujo 103, San Salvador", imageName: "gasuno"),
         Gasolinera(name: "UNO.Los Próceres", address: "Blvr. Los Proceres, San Salvador", imageName: "gasuno"),
         Gasolinera(name: "UNO.San Jacinto", address: "Calle San Jacinto, Av. Los Diplomáticos 211, San Salvador", imageName: "gasuno"),
