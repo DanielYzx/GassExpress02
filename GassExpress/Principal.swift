@@ -12,8 +12,11 @@ struct Principal: View {
     @State private var isMenuOpen = false
 
     var body: some View {
+        
         TabView(selection: $selectedTab) {
-            Text("Pantalla 1")
+    
+            //Text("Pantalla 1")
+                Horarios()
                 .tabItem {
                     Image(systemName: "clock.arrow.circlepath")
                     Text("Horarios")
@@ -27,7 +30,9 @@ struct Principal: View {
                 }
                 .tag(1)
             
-            Text("Pantalla 3")
+            
+            //Text("Pantalla 3")
+                Ofertas()
                 .tabItem {
                     Image(systemName: "giftcard")
                     Text("Ofertas")

@@ -14,7 +14,8 @@ struct Login: View {
     // Añade estados para controlar la navegación a las diferentes pantallas
         @State var isShowingActualizarC = false
         @State var isShowingRegistro = false
-        @State var isShowingPrincipal = false
+       // @State var isShowingPrincipal = false
+        @State var isShowingMenuView = false
     var body: some View {
         NavigationView{
             VStack{
@@ -85,7 +86,7 @@ struct Login: View {
                     
                     Button("Iniciar Sesión") {
                         // Realiza aquí la lógica de inicio de sesión si es necesario
-                        isShowingPrincipal.toggle()
+                        isShowingMenuView.toggle()
                     }
                     .buttonStyle(PlainButtonStyle())
                     .padding(15)
@@ -95,8 +96,8 @@ struct Login: View {
                     .font(.system(size: 18))
                     .cornerRadius(6)
                     
-                    .fullScreenCover(isPresented: $isShowingPrincipal) {
-                        Principal()
+                    .fullScreenCover(isPresented: $isShowingMenuView) {
+                        MenuView()
                     }
                     
                     NavigationLink(destination: Registro(), isActive: $isShowingRegistro) {
