@@ -19,7 +19,7 @@ struct Principal: View {
                 Horarios()
                 .tabItem {
                     Image(systemName: "clock.arrow.circlepath")
-                    Text("Horariossss")
+                    Text("Horarios")
                 }
                 .tag(0)
             
