@@ -55,7 +55,7 @@ struct Registro: View {
                         .background(Color.gray.opacity(0.3)) // Establece el color de fondo directamente
                         .cornerRadius(6)
                         .overlay(
-                                Text("Ingrese su dirección...")
+                                Text("Ingrese su dirección")
                                     .padding(.leading, 8) // Alinea el placeholder a la izquierda
                                     .foregroundColor(Color.secondary) // Cambia el color del placeholder si lo deseas
                                     .opacity(dirrecion.isEmpty ? 1 : 0) // Muestra el placeholder si el texto está vacío
