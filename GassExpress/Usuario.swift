@@ -18,6 +18,7 @@ struct Usuario: View {
     
     @State var isShowingLogin = false
     @State var isShowingPrincipal = false
+    @State var isShowingMenuView = false
 
     var body: some View {
         NavigationView {
@@ -74,7 +75,7 @@ struct Usuario: View {
                     Button("Guardar") {
                         // Aquí puedes guardar la información ingresada por el usuario.
                         // Realiza aquí la lógica de inicio de sesión si es necesario
-                        isShowingPrincipal.toggle()
+                        isShowingMenuView.toggle()
                         print("Usuario: \(usuario)")
                       
                     }
@@ -88,8 +89,8 @@ struct Usuario: View {
                     .font(.headline)
                     .padding(10)
                     
-                    .fullScreenCover(isPresented: $isShowingPrincipal) {
-                        Principal()
+                    .fullScreenCover(isPresented: $isShowingMenuView) {
+                        MenuView()
                     }
                    
                     Button(action: {
