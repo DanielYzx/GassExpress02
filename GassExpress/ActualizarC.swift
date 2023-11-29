@@ -38,21 +38,19 @@ struct ActualizarC: View {
                         .background(Color.gray.opacity(0.3))
                         .cornerRadius(6)
                         .padding(5)
-
                     Button("Aceptar") {
-                        // Realiza la validación del usuario aquí
-                        //if usuarioExiste {
-                            // Mostrar los campos adicionales
-                           // usuarioExiste = true
-                        if usuario=="juan"{
+                       
+                       
+                        // Realizar la validación del usuario aquí
+                        if usuario == "juan" {
                             usuarioExiste = true
+                            mostrarMensajeError = false
                         } else {
-                            // Mostrar un mensaje de error
-                            // Puedes mostrar una alerta o un mensaje en lugar de cambiar la variable de estado
-                           // print("Usuario no encontrado. Mostrar mensaje de error.")
+                            usuarioExiste = false
                             mostrarMensajeError = true
                         }
                     }
+
                     .buttonStyle(PlainButtonStyle())
                     .padding(10)
                     .frame(maxWidth: .infinity)
