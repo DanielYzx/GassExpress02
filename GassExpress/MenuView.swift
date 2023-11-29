@@ -114,25 +114,21 @@ struct Menu: View {
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 }
                 Spacer()
-                Button(action: {
-                    
-                }){
-                    Image(systemName: "square.and.pencil")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                }
+               
+               
             }
             .padding(.top)
             .padding(.bottom, 25)
             
-            Image("user3")
+            Image("logo")
                 .resizable()
                 .frame(width: 80, height: 80)
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             
             VStack(spacing: 12){
-                Text("Karen")
+                Text("Benvenido a")
                 
-                Text("Developer")
+                Text("Gass Express")
                     .font(.caption)
             }
             .padding(.top, 25)
