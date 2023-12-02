@@ -76,7 +76,8 @@ struct Home: View {
 struct Menu: View {
     @Binding var dark : Bool
     @Binding var show : Bool
-    @State private var isLoggingOut = false
+    @State private var isShowingLogin = false
+
     
     var body: some View {
         VStack{
@@ -203,7 +204,7 @@ struct Menu: View {
                 
                 Button(action: {
                                // Cerrar sesión y salir de la aplicación
-                              self.isLoggingOut = true
+                            isShowingLogin.toggle()
                            }) {
                                HStack(spacing: 22) {
                                    Image("personblue")
@@ -212,18 +213,13 @@ struct Menu: View {
                                        .foregroundColor(.blue)
 
                                    Text("Cerrar Sesión")
+                                    .fullScreenCover(isPresented: $isShowingLogin) {
+                                        Login()
+                                    }
                                }
                            }
                            .padding(.top, 25)
-                .background(
-                    NavigationLink(
-                        destination: Login(),
-                        isActive: $isLoggingOut
-                    ) {
-                        EmptyView()
-                    }
-                    .isDetailLink(false)
-                )
+                
                 
             }
             
