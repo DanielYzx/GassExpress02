@@ -10,6 +10,7 @@ import SwiftUI
 struct Login: View {
     @State var user: String = ""
     @State var password: String = ""
+    @State private var showAlert = false
     
     // Añade estados para controlar la navegación a las diferentes pantallas
         @State var isShowingActualizarC = false
@@ -85,9 +86,23 @@ struct Login: View {
                     
                     
                     Button("Iniciar Sesión") {
-                        // Realiza aquí la lógica de inicio de sesión si es necesario
-                        isShowingMenuView.toggle()
+                        // Realiza la validación aquí
+                        if user == "Juan" && password == "1234" {
+                            // Lógica de inicio de sesión exitoso
+                            isShowingMenuView.toggle()
+                        } else {
+                            // Muestra una alerta en caso de que las credenciales no sean correctas
+                            showAlert.toggle()
+                        }
                     }
+                    .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("Error de inicio de sesión"),
+                            message: Text("Las credenciales ingresadas no son correctas. Por favor, inténtalo de nuevo."),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
+                    
                     .buttonStyle(PlainButtonStyle())
                     .padding(15)
                     .frame(maxWidth: .infinity)
@@ -148,3 +163,7 @@ extension Color {
         self.init(red: red, green: green, blue: blue)
     }
 }
+
+
+
+
