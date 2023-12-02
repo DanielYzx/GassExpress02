@@ -25,77 +25,58 @@ struct ContentView_Previews: PreviewProvider {
 struct Home: View {
     @State var dark = false
     @State var show = false
+    
     var body: some View {
-        //NavigationView{
-           // VStack{
-        ZStack(alignment: .leading){
-            GeometryReader{_ in
-                
-                VStack{
-                    
-                    ZStack{
-                        
-                        HStack{
-                            
-                            Button(action:{
-                                
-                                withAnimation(.default){
+        NavigationView {
+            ZStack(alignment: .leading) {
+                VStack(spacing: 0) {
+                    ZStack {
+                        HStack {
+                            Button(action: {
+                                withAnimation(.default) {
                                     self.show.toggle()
                                 }
-                                
-                            }){
-                                
+                            }) {
                                 Image("menu")
                                     .resizable()
                                     .frame(width: 25, height: 25)
-                                
                             }
-                               Spacer()
+                            Spacer()
                         }
-                        
-                        //Text("Home")
-                        
                     }
-                    
                     .padding()
                     .foregroundColor(.primary)
                     .overlay(Rectangle().stroke(Color.primary.opacity(0.1), lineWidth: 1).shadow(radius: 3).edgesIgnoringSafeArea(.top))
                     
-                    Spacer()
-                    
-                Principal()
+                    Principal()
                     
                     Spacer()
                 }
-            }
-            
-            HStack{
-                Menu(dark: self.$dark, show: self.$show)
-                    .preferredColorScheme(self.dark ? .dark : .light)
-                    .offset(x: self.show ? 0 : -UIScreen.main.bounds.width / 1.5 )
                 
-                Spacer(minLength: 0)
+                HStack {
+                    Menu(dark: self.$dark, show: self.$show)
+                        .preferredColorScheme(self.dark ? .dark : .light)
+                        .offset(x: self.show ? 0 : -UIScreen.main.bounds.width / 1.5 )
+                    
+                    Spacer(minLength: 0)
+                }
+                .background(Color.primary.opacity(self.show ? (self.dark ? 0.05 : 0.02) : 0).edgesIgnoringSafeArea(.all))
             }
-            .background(Color.primary.opacity(self.show ? (self.dark ? 0.05 : 0.02) : 0).edgesIgnoringSafeArea(.all))
-            
-        
+            .navigationBarHidden(true)
+            .navigationBarTitle("") // Asegúrate de ocultar el título de la barra de navegación
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-            //    Spacer()
-           // }
-       // .padding(.top)
-        //.navigationBarHidden(true) // Ocultar la barra de navegación
-      
-    //}
-        
     }
-    
 }
+
+
 
 
 
 struct Menu: View {
     @Binding var dark : Bool
     @Binding var show : Bool
+    @State private var isLoggingOut = false
     
     var body: some View {
         VStack{
@@ -161,18 +142,20 @@ struct Menu: View {
                 
                 Button(action: {
                   
-                    
+                    self.show.toggle()
                 }){
                 
                 
-                    HStack(spacing: 22){
-                        Image("gassblue")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.blue)
-                        
-                        Text("Estaciones                      ")
-                        Spacer()
+                    NavigationLink(destination: EstacionesView()) {
+                        HStack(spacing: 22) {
+                            Image("gassblue")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.blue)
+
+                            Text("Estaciones")
+                            Spacer()
+                        }
                     }
                 
                 }
@@ -219,19 +202,28 @@ struct Menu: View {
                 
                 
                 Button(action: {
-                
-                }){
-                    HStack(spacing: 22){
-                        Image("personblue")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.blue)
-                        
-                        Text("Cerrar Sesión                      ")
+                               // Cerrar sesión y salir de la aplicación
+                              self.isLoggingOut = true
+                           }) {
+                               HStack(spacing: 22) {
+                                   Image("personblue")
+                                       .resizable()
+                                       .frame(width: 30, height: 30)
+                                       .foregroundColor(.blue)
+
+                                   Text("Cerrar Sesión")
+                               }
+                           }
+                           .padding(.top, 25)
+                .background(
+                    NavigationLink(
+                        destination: Login(),
+                        isActive: $isLoggingOut
+                    ) {
+                        EmptyView()
                     }
-                }
-                .padding(.top, 25)
-                
+                    .isDetailLink(false)
+                )
                 
             }
             
@@ -243,10 +235,13 @@ struct Menu: View {
         .background((self.dark ? Color.black : Color.white).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
         .overlay(Rectangle().stroke(Color.primary.opacity(0.2), lineWidth: 2).shadow(radius: 3).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
         
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         
     }
 }
+
+
 
 
 

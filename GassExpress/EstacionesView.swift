@@ -15,11 +15,11 @@ struct EstacionesView: View {
                     EstacionRow(imageName: "gasuno", stationName: "Gasolinera Uno")
                 }
 
-                NavigationLink(destination: GasoUno()) {
+                NavigationLink(destination: GasTexaco()) {
                     EstacionRow(imageName: "gastexaco", stationName: "Gasolinera Texaco")
                 }
 
-                NavigationLink(destination: GasoUno()) {
+                NavigationLink(destination: GasPuma()) {
                     EstacionRow(imageName: "gaspuma", stationName: "Gasolinera Puma")
                 }
                 // Agrega más estaciones aquí si es necesario
