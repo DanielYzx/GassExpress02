@@ -63,9 +63,11 @@ struct Home: View {
                 .background(Color.primary.opacity(self.show ? (self.dark ? 0.05 : 0.02) : 0).edgesIgnoringSafeArea(.all))
             }
             .navigationBarHidden(true)
-            .navigationBarTitle("") // Asegúrate de ocultar el título de la barra de navegación
-            .navigationViewStyle(StackNavigationViewStyle())
+                        .navigationBarTitle(" ") // Espacio en blanco vacío
+                        .navigationBarTitleDisplayMode(.inline) // Ajusta el modo de visualización del título
+                        .navigationViewStyle(StackNavigationViewStyle())
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
