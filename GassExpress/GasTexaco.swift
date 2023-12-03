@@ -27,7 +27,7 @@ struct GasTexaco: View {
     var body: some View {
         
             List(estaciones, id: \.name) { estacion in
-                NavigationLink(destination: GasTexacoDet()) {
+                NavigationLink(destination: GasTexacoDet(gasolineraName: estacion.name, gasolineraDirec: estacion.address)) {
                     GasTexacodetRow(imageName: estacion.imageName, stationName: estacion.name, stationAddress: estacion.address)
                 }
             }

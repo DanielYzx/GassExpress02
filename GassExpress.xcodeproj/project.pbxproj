@@ -24,9 +24,9 @@
 		299320392B1BCBDB00231C3F /* GasPumaDet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299320382B1BCBDB00231C3F /* GasPumaDet.swift */; };
 		299320412B1BCCB400231C3F /* GasTexaco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299320402B1BCCB400231C3F /* GasTexaco.swift */; };
 		299320462B1BCCD100231C3F /* GasTexacoDet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299320452B1BCCD100231C3F /* GasTexacoDet.swift */; };
+		299321212B1C29E400231C3F /* Precios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299321202B1C29E300231C3F /* Precios.swift */; };
 		29FA0AAA2AF1B64D00CD3FF3 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA0AA92AF1B64D00CD3FF3 /* Login.swift */; };
 		29FA0B6C2AFDC59900CD3FF3 /* Ofertas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA0B6B2AFDC59700CD3FF3 /* Ofertas.swift */; };
-		29FA0B712AFDC5B300CD3FF3 /* Horarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA0B702AFDC5B300CD3FF3 /* Horarios.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +70,9 @@
 		299320382B1BCBDB00231C3F /* GasPumaDet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasPumaDet.swift; sourceTree = "<group>"; };
 		299320402B1BCCB400231C3F /* GasTexaco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasTexaco.swift; sourceTree = "<group>"; };
 		299320452B1BCCD100231C3F /* GasTexacoDet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasTexacoDet.swift; sourceTree = "<group>"; };
+		299321202B1C29E300231C3F /* Precios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Precios.swift; sourceTree = "<group>"; };
 		29FA0AA92AF1B64D00CD3FF3 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		29FA0B6B2AFDC59700CD3FF3 /* Ofertas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ofertas.swift; sourceTree = "<group>"; };
-		29FA0B702AFDC5B300CD3FF3 /* Horarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horarios.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 				299320382B1BCBDB00231C3F /* GasPumaDet.swift */,
 				29FA0AA92AF1B64D00CD3FF3 /* Login.swift */,
 				29FA0B6B2AFDC59700CD3FF3 /* Ofertas.swift */,
-				29FA0B702AFDC5B300CD3FF3 /* Horarios.swift */,
+				299321202B1C29E300231C3F /* Precios.swift */,
 				2964B3F92ADC279B00D2A703 /* Assets.xcassets */,
 				2964B3FE2ADC279B00D2A703 /* Info.plist */,
 				2964B3FB2ADC279B00D2A703 /* Preview Content */,
@@ -302,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				29036EF72AE0D84500EF3194 /* GasoUnoDet.swift in Sources */,
-				29FA0B712AFDC5B300CD3FF3 /* Horarios.swift in Sources */,
 				29036EB92ADF76ED00EF3194 /* MenuView.swift in Sources */,
 				29FA0AAA2AF1B64D00CD3FF3 /* Login.swift in Sources */,
 				299320392B1BCBDB00231C3F /* GasPumaDet.swift in Sources */,
@@ -316,6 +315,7 @@
 				299320412B1BCCB400231C3F /* GasTexaco.swift in Sources */,
 				2964B3F62ADC279600D2A703 /* GassExpressApp.swift in Sources */,
 				2964B4982ADE3A6400D2A703 /* Registro.swift in Sources */,
+				299321212B1C29E400231C3F /* Precios.swift in Sources */,
 				2964B4BB2ADEA61600D2A703 /* ActualizarC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

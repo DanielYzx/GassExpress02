@@ -16,7 +16,7 @@ struct Principal: View {
         TabView(selection: $selectedTab) {
     
             //Text("Pantalla 1")
-                Horarios()
+                Precios()
                 .tabItem {
                     Image(systemName: "wallet.pass.fill")
                     Text("Precios")

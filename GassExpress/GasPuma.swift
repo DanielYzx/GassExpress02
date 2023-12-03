@@ -27,7 +27,7 @@ struct GasPuma: View {
     var body: some View {
         
             List(estaciones, id: \.name) { estacion in
-                NavigationLink(destination: GasPumaDet()) {
+                NavigationLink(destination: GasPumaDet(gasolineraName: estacion.name, gasolineraDirec: estacion.address)) {
                     GasPumadetRow(imageName: estacion.imageName, stationName: estacion.name, stationAddress: estacion.address)
                 }
             }

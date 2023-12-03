@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GasPumaDet: View {
+    var gasolineraName: String
+    var gasolineraDirec: String
     var body: some View{
         // Cambia el color de fondo a tu preferencia
         Color("gris")
@@ -15,7 +17,7 @@ struct GasPumaDet: View {
             
             .overlay(
                 VStack {
-                    Text("Gasolinera: Puma la Gloria")
+                    Text("Gasolinera: \(gasolineraName)")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.black) // Cambia el color del texto si es necesario
                     
@@ -27,7 +29,8 @@ struct GasPumaDet: View {
                     Group{
                         Text("Ubicacion:")
                             
-                        Text("1era Avenida Norte ")
+                        Text("\(gasolineraDirec) ")
+
                             
                         
                         Divider()
@@ -111,6 +114,6 @@ struct GasPumaDet: View {
 
 struct GasPumaDet_Previews: PreviewProvider {
     static var previews: some View {
-        GasPumaDet()
+        GasPumaDet(gasolineraName: "NombreDePrueba", gasolineraDirec: "direccion1")
     }
 }
