@@ -9,7 +9,22 @@ import SwiftUI
 
 struct Horarios: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Precios del combustible")
+                .foregroundColor(.black)
+                .font(.system(size: 24))
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.top, 10)
+            Divider()
+                .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.blue/*@END_MENU_TOKEN@*/)
+                .padding()
+           
+            Image("combustible")
+                .resizable()
+                .frame(width: 350, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding()
+            
+        }
     }
 }
 

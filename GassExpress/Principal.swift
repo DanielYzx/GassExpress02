@@ -18,8 +18,8 @@ struct Principal: View {
             //Text("Pantalla 1")
                 Horarios()
                 .tabItem {
-                    Image(systemName: "clock.arrow.circlepath")
-                    Text("Horarios")
+                    Image(systemName: "wallet.pass.fill")
+                    Text("Precios")
                 }
                 .tag(0)
             
